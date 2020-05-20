@@ -1,0 +1,34 @@
+html {
+    background-color: #A3E4C7; /*Uso de colores complementarios*/
+    font-size: 10px;
+    font-family: "Open Sans", sans-serif; /*Activando las familias de las fuentes*/
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 0; /*Evita que el hueco demasiado grande en la parte superior*/
+    padding: 20px 0;
+    text-shadow: 2px 2px 1px black; /*Desplazamiento orizontal, vertical, radio de desenfoque y color*/
+}
+
+p, li {
+    font-size: 14px;
+    line-height: 2; /*Ancho de línea*/
+    letter-spacing: 1px; /*Espaciado entre letras*/
+    text-align: justify;
+}
+
+body {
+    width: 600px;
+    margin: 0 auto; /* 0--> Arriba y abajo, auto --> Izq y drcha */
+    padding: 0 20px 20px 20px; /*Arriba, drcha, abajo, izq*/
+    background-color: #E4A3C0;
+    border: 5px solid black;
+}
+
+img {
+    display: block; /*Cambia de in-line a block*/
+    margin: 0 auto;
+    width: 100px;
+}
