@@ -5,7 +5,7 @@
 var miImage = document.querySelector('img');
  miImage.onclick = function () {
      var miSrc = miImage.getAttribute('src');
-     if (miSrc === 'D:/WEB/CV/images/foto_carnet.jpg') {
+     if (miSrc === '/images/foto_carnet.jpg') {
          miImage.setAttribute('src', '/images/test.png');
      } else {
          miImage.setAttribute('src', '/images/foto_carnet.jpg');
