@@ -1,5 +1,6 @@
 html {
-    background-color: #A3E4C7; /*Uso de colores complementarios*/
+    background-color: /*#8395BC*/#4E84D1;
+    /*Uso de colores complementarios*/
     font-size: 10px;
     font-family: "Open Sans", sans-serif; /*Activando las familias de las fuentes*/
 }
@@ -23,7 +24,9 @@ body {
     width: 600px;
     margin: 0 auto; /* 0--> Arriba y abajo, auto --> Izq y drcha */
     padding: 0 20px 20px 20px; /*Arriba, drcha, abajo, izq*/
-    background-color: #E4A3C0;
+    background-color: /*#BCAA83*/#D19B4E;
+    /*el background-image no funciona sin poner 'url'*/
+    background-image: url('D:/WEB/CV/images/papel_rugoso.jpg');
     border: 5px solid black;
 }
 
