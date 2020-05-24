@@ -24,7 +24,6 @@ body {
     width: 600px;
     margin: 0 auto; /* 0--> Arriba y abajo, auto --> Izq y drcha */
     padding: 0 20px 20px 20px; /*Arriba, drcha, abajo, izq*/
-    /*background-color: /*#BCAA83#D19B4E;*/
     /*el background-image no funciona sin poner 'url'*/
     background-image: '/images/papel_rugoso.jpg';
     border: 5px solid black;
