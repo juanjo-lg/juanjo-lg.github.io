@@ -25,7 +25,7 @@ body {
     margin: 0 auto; /* 0--> Arriba y abajo, auto --> Izq y drcha */
     padding: 0 20px 20px 20px; /*Arriba, drcha, abajo, izq*/
     /*el background-image no funciona sin poner 'url'*/
-    background-image: url('/images/papel_rugoso.jpg');
+    background-image: url('images/papel_rugoso.jpg');
     border: 5px solid black;
 }
 
