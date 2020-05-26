@@ -17,6 +17,6 @@ nav {
 }
 
 section {
-  background-image: url('papel_rugoso.jpg');
+  background-image: url('/images/papel_rugoso.jpg');
   padding: 5px;
 }
