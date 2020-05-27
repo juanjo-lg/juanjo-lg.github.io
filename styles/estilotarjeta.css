@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Estilos css para tarjeta de visita.*/
 
 html {
@@ -20,3 +21,27 @@ section {
   background-image: url('/images/papel_rugoso.jpg');
   padding: 5px;
 }
+=======
+/*Estilos css para tarjeta de visita.*/
+
+html {
+  background-color: white;
+}
+
+body {
+  width: 400px;
+  margin: auto;
+  text-align: center;
+
+}
+
+nav {
+  background-color: grey;
+  border: 2px solid;
+}
+
+section {
+  background-image: url('/images/papel_rugoso.jpg');
+  padding: 5px;
+}
+>>>>>>> 2ca6905e98d090b16f10d50e2b3bbdc0416b2357
