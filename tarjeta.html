@@ -14,7 +14,10 @@
       <h1>Bienvenidos</h1>
     </header>
     <nav>
-      <a href="index.html">Presentación  |</a> Presentación  |  Vida Profesional  | Educación  | Más info
+      <a href="index.html">Presentación</a> |
+      <a href="#">Vida Profesional</a> |
+      <a href="#">Educación</a> |
+      <a href="#">Más info</a>
     </nav>
     <!--Main agrupa la parte principal de la página.-->
     <main>
@@ -30,16 +33,21 @@
       <aside class="">
         <ul>
           <li><img src="coigt.png" alt="" width="24" height="24">
-          <a href="http://www.coigt.com/profesional/8024">Colegiado nº 8024</a></li>
+          <a href="http://www.coigt.com/profesional/8024" target="_blank">Colegiado nº 8024</a></li>
           <li><img src="linkedin.svg" alt="" width="18" height="18">
-            <a href="https://www.linkedin.com/in/juan-jos%25C3%25A9-lorenzo-guti%25C3%25A9rrez-23a2b0103">
+            <!--El atributo "target = _blank", indica que se abre en otra ventana
+            distinta a la que utiliza la página.-->
+            <a href="https://www.linkedin.com/in/juan-jos%25C3%25A9-lorenzo-guti%25C3%25A9rrez-23a2b0103" target="_blank">
               Juan José Lorenzo Gutiérrez</a></li>
         </ul>
       </aside>
     </main>
   </body>
   <footer>
-    <p><cite>JJLG<br></cite>
-    <small>&copy; Derechos Reservados <time datetime="2020-05-25" pubdate>2020</time></small></p>
+    <address class="">Valladolid, España</address>
+    <small>
+      &copy; <time datetime="2020-05-25" pubdate>2020</time>
+      <cite>J.J. Lorenzo Gutiérrez</cite>
+    </small>
   </footer>
 </html>
