@@ -1,51 +1,56 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan José Lorenzo Gutiérrez</title>
-    <link href= D:/WEB/CV/styles/style.css rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1>¡Bienvenido a mi WEB!</h1>
-    
-    <p>En primer lugar, estoy encantado de darle la bienvenida a mi página web. Espero que le resulte interesante su contenido y que disfrute su lectura como lo he hecho yo en su escritura.</p>
-
-    <p>Mi nombre es Juan José Lorenzo Gutiérrez, soy Ingeniero Técnico en Topografía por la Universidad Politécnica Superior de Ávila y un apasionado de la tecnología, la programación informática y su aplicación al campo de la geomática.</p>
-
-    <p>En mi vida profesional he tenido la suerte de formar parte de varios proyectos muy interesantes en los cuales he tenido grandes vivencias y he crecido tanto personal como profesionalmente. Los principales en los que he participado han sido:</p>
-
-    <ul>
-        <li><em>Obra ferroviaria.
-            <ol>
-                <a href="https://es.wikipedia.org/wiki/Metrotren_Rancagua">
-            Construcción de línea Rancagua Express</a>
-            </ol>
-        </em></li>
-        
-        <li><em>Obra industrial.
-            <ol>
-                <a href="https://www.durofelguera.com/index.asp?MP=3&MS=102&TR=A&IDR=20&volver=1&id=1326&r=1920*1080">
-                Dirección de obra en Cogeneradora Aconcagua</a></ol>
-            <ol>
-                <a href="http://www.balzola.com/es/Referencias/Obra%20civil%20industrial/Obra%20Civil%20Proyecto%20Intake%20y%20Planta%20Desaladora%20SGO.html">
-                Construcción de Planta Desaladora Spence Growth Option</a>
-            </ol>
-        </em></li>
-
-        <li><em>Edificación.
-            <ol><a href="https://www.viacelere.com/promociones-valladolid/parqueluz">
-            Construcción de viviendas en promoción Célere Parqueluz</a>
-            </ol>
-        </em></li>
-    </ul>
-
-    <img src="D:/WEB/CV/images/foto_carnet.jpg" alt="Fotografía tamaño carnet de Juan José Lorenzo Gutiérrez.">
-
-    <button>Cambiar de usuario</button>
-
-    <script src="D:/WEB/CV/scripts/main.js"></script>
-
-</body>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Tarjeta de visita Juan José Lorenzo Gutiérrez">
+    <meta name="author" content="Juanjo Lorenzo Gutiérrez">
+    <link rel="stylesheet" href="estilotarjeta.css">
+    <!--Este link se utiliza para poner un icono en la pestaña superior.-->
+    <link rel="icon" href="jlg.png" type="image" sizes="16x16">
+    <title>Tarjeta de visita - Juanjo Lorenzo Gutiérrez</title>
+  </head>
+  <body>
+    <header>
+      <h1>Bienvenidos</h1>
+    </header>
+    <nav>
+      <a href="laboral.html">Presentación</a> |
+      <a href="#">Vida Profesional</a> |
+      <a href="#">Educación</a> |
+      <a href="#">Más info</a>
+    </nav>
+    <!--Main agrupa la parte principal de la página.-->
+    <main>
+      <section>
+        <h2 id="nombre">Juan  José Lorenzo Gutiérrez</h2>
+        <p class="titulo">Ingeniero Técnico en Topografía</p>
+        <p class="titulo">Técnico en PRL</p>
+        <p id="mail">
+          <address class="mail">
+          <!--Representa información de contacto.-->
+          juanjolorenzogutierrez@gmail.com
+          </address>
+        </p>
+      </section>
+      <aside class="">
+        <ul>
+          <li><img src="coigt.png" alt="" width="24" height="24">
+          <a href="http://www.coigt.com/profesional/8024" target="_blank">Colegiado nº 8024</a></li>
+          <li><img src="linkedin.svg" alt="" width="18" height="18">
+            <!--El atributo "target = _blank", indica que se abre en otra ventana
+            distinta a la que utiliza la página.-->
+            <a href="https://www.linkedin.com/in/juan-jos%25C3%25A9-lorenzo-guti%25C3%25A9rrez-23a2b0103" target="_blank">
+              Juan José Lorenzo Gutiérrez</a></li>
+        </ul>
+      </aside>
+    </main>
+  </body>
+  <footer>
+    <address class="">Valladolid, España</address>
+    <small>
+      &copy; <time datetime="2020-05-25" pubdate>2020</time>
+      <!--Enlace que abre aplicación para enviar correo automáticamente.-->
+      <cite><a href="mailto:juanjolorenzogutierrez@gmail.com">J.J. Lorenzo Gutiérrez</a></cite>
+    </small>
+  </footer>
 </html>
