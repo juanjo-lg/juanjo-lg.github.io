@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>¡Bienvenido a mi WEB!</h1>
+    <h1 id="titulo">¡Bienvenido a mi WEB!</h1>
 
     <p>En primer lugar, estoy encantado de darle la bienvenida a mi página web. Espero que le resulte interesante su contenido y que disfrute su lectura como lo he hecho yo en su escritura.</p>
 
@@ -43,11 +43,17 @@
     </ul>
 
     <!--Fotografía personal.-->
-    <img src="/images/foto_carnet.jpg" alt="Fotografía tamaño carnet de Juan José Lorenzo Gutiérrez.">
-
+    <figure>
+      <img src="/images/foto_carnet.jpg" alt="Fotografía tamaño carnet de Juan José Lorenzo Gutiérrez.">
+      <figcaption>Fotografía JJLG</figcaption>
+    </figure>
+    
     <button>Cambiar de usuario</button>
 
-    <a href= "index.html">Tarjeta de visita</a>
+    <p><a href= "index.html">Tarjeta de visita</a></p>
+
+    <!--Crea un enlace al título de la página.-->
+    <p><a href="#titulo">Volver</a></p>
 
     <script src="/scripts/main.js"></script>
 
