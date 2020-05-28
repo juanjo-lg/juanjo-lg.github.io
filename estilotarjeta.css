@@ -2,6 +2,7 @@
 
 html {
   background-color: white;
+  /*background-image: url("images/CYL.png");*/
   background-image: url('images/Foto_MDC.png');
 }
 
@@ -22,4 +23,37 @@ section {
   background-image: url('images/papel_rugoso.jpg');
   padding: 5px;
   border: 3px solid;
+}
+
+.titulo {
+  margin: 10px 80px;
+  text-align: left;
+}
+
+li {
+  margin: 10px 60px;
+  text-align: left;
+}
+
+/*Quita los subrayados de los links.*/
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+#carta {
+  vertical-align: middle;
+  margin: 0px 5px;
+}
+
+aside {
+  background-color: white;
+}
+
+footer {
+  background-color: white;
 }
