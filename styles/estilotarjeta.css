@@ -1,47 +1,113 @@
-<<<<<<< HEAD
 /*Estilos css para tarjeta de visita.*/
 
 html {
   background-color: white;
+  /*background-image: url("images/CYL.png");*/
+  background-image: url('../images/Foto_MDC.png');
 }
 
 body {
   width: 400px;
   margin: auto;
   text-align: center;
+}
 
+header {
+  border-radius: 20px;
+  background-color: #ABABAB;
+  border: 2px solid;
+  margin: 20px 0px;
 }
 
 nav {
-  background-color: grey;
+  background-color: #ABABAB;
   border: 2px solid;
+  padding: 5px;
+  border-radius: 20px;
 }
 
 section {
-  background-image: url('/images/papel_rugoso.jpg');
+  background-image: url('../images/papel_rugoso.jpg');
+  width: auto;
   padding: 5px;
-}
-=======
-/*Estilos css para tarjeta de visita.*/
-
-html {
-  background-color: white;
+  border: 3px solid;
+  /*Radio para los bordes de la tarjeta y margenes para que quede separada del la barra de navegaciñon y del aside.*/
+  border-radius: 20px;
+  margin: 20px 0px;
 }
 
-body {
-  width: 400px;
+.titulo {
+  margin: 10px 80px;
+  text-align: left;
+}
+
+li {
+  margin: 10px 60px;
+  text-align: left;
+}
+
+/*Quita los subrayados de los links.*/
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*Alinea los logos con el texto*/
+img {
+  vertical-align: bottom;
+}
+
+/*Alinea la carta con el texto del copyright*/
+#carta {
+  vertical-align: middle;
+  margin: 0px 5px;
+}
+
+aside {
+  background-color: #ABABAB;
+  border-radius: 20px;
+  border: 2px solid;
+}
+
+footer {
+  border-radius: 20px;
+  background-color: #ABABAB;
+  border: 2px solid;
+  margin: 10px 0px;
+}
+
+.titulo {
+  margin: 10px 80px;
+  text-align: left;
+}
+
+li {
+  margin: 0px 60px;
+  text-align: left;
+}
+
+/*Quita los subrayados de los links.*/
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+#carta {
+  vertical-align: middle;
+  margin: 0px 5px;
+}
+
+h1 {
   margin: auto;
-  text-align: center;
-
 }
 
-nav {
-  background-color: grey;
-  border: 2px solid;
+/*Los <p> que sean hijos de span*/
+span > p {
+  text-align: justify;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-
-section {
-  background-image: url('/images/papel_rugoso.jpg');
-  padding: 5px;
-}
->>>>>>> 2ca6905e98d090b16f10d50e2b3bbdc0416b2357
