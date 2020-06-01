@@ -1,0 +1,27 @@
+html {
+  background-color: grey;
+  /*background-image: url("images/CYL.png");*/
+  background-image: url('../images/corazon1.png');
+  text-align: center;
+  color: white;
+  /*font-family: 'Bitter', serif;*/
+  font-family: 'Shadows Into Light', cursive;
+}
+
+header {
+  margin: 50px;
+  font-size: 37px;
+}
+
+p {
+  font-size: 22px;
+}
+
+#tequiero {
+  font-size: 45px;
+}
+
+img {
+  border: 5px black solid;
+  border-radius: 100;
+}
