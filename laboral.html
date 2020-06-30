@@ -4,44 +4,58 @@ git add .
 git commit -m "mensaje"
 git push origin master-->
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan José Lorenzo Gutiérrez</title>
-    <link href= "styles/style.css" rel="stylesheet" type="text/css">
+    <link href= "styles/estilotarjeta.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="images/jlg.png" type="image" sizes="16x16">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1 id="titulo">¡Bienvenido a mi WEB!</h1>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">-->
+    <title>Juan José Lorenzo Gutiérrez - Vida Laboral</title>
+  </head>
+  <body>
+    <header>
+      <h1 id="titulo">¡Bienvenido a mi WEB!</h1>
+    </header>
+    <nav>
+      <a href="index.html">Inicio</a> |
+      <a href="presentacion.html">Presentación</a> |
+      <a href="educacion.html">Educación</a> |
+      <a href="#">Más info</a>
+    </nav>
+    <main>
+      <section>
+        <span>
+          <p>En mi vida profesional he tenido la suerte de formar parte de varios proyectos muy interesantes en los cuales he tenido grandes vivencias y he crecido tanto personal como profesionalmente. Los principales en los que he participado han sido:</p>
+        </span>
+        <ul>
+          <li class="obras"><em>Obra ferroviaria.
+            <ul>
+                <li> <a href="https://es.wikipedia.org/wiki/Metrotren_Rancagua">
+                Construcción de línea Rancagua Express</a>
+                </li>
+            </ul>
+          </em></li>
 
-    <p>En mi vida profesional he tenido la suerte de formar parte de varios proyectos muy interesantes en los cuales he tenido grandes vivencias y he crecido tanto personal como profesionalmente. Los principales en los que he participado han sido:</p>
+          <li class="obras"><em>Obra industrial.
+            <ul>
+              <li> <a href="https://www.durofelguera.com/index.asp?MP=3&MS=102&TR=A&IDR=20&volver=1&id=1326&r=1920*1080">
+              Dirección de obra en Cogeneradora Aconcagua</a></li>
+              <li>
+              <a href="http://www.balzola.com/es/Referencias/Obra%20civil%20industrial/Obra%20Civil%20Proyecto%20Intake%20y%20Planta%20Desaladora%20SGO.html">
+              Construcción de Planta Desaladora Spence Growth Option</a></li>
+            </ul>
+          </em></li>
 
-    <ul>
-        <li><em>Obra ferroviaria.
-            <ol>
-                <a href="https://es.wikipedia.org/wiki/Metrotren_Rancagua">
-            Construcción de línea Rancagua Express</a>
-            </ol>
-        </em></li>
-
-        <li><em>Obra industrial.
-            <ol>
-                <a href="https://www.durofelguera.com/index.asp?MP=3&MS=102&TR=A&IDR=20&volver=1&id=1326&r=1920*1080">
-                Dirección de obra en Cogeneradora Aconcagua</a></ol>
-            <ol>
-                <a href="http://www.balzola.com/es/Referencias/Obra%20civil%20industrial/Obra%20Civil%20Proyecto%20Intake%20y%20Planta%20Desaladora%20SGO.html">
-                Construcción de Planta Desaladora Spence Growth Option</a>
-            </ol>
-        </em></li>
-
-        <li><em>Edificación.
-            <ol><a href="https://www.viacelere.com/promociones-valladolid/parqueluz">
+          <li class="obras"><em>Edificación.
+            <ul><li> <a href="https://www.viacelere.com/promociones-valladolid/parqueluz">
             Construcción de viviendas en promoción Célere Parqueluz</a>
-            </ol>
-        </em></li>
-    </ul>
-
+            </li>
+          </ul>
+          </em></li>
+        </ul>
+      </section>
+    </main>
     <!--Fotografía personal.-->
     <figure>
       <img src="images/foto_carnet.jpg" alt="Fotografía tamaño carnet de Juan José Lorenzo Gutiérrez.">
@@ -56,6 +70,14 @@ git push origin master-->
     <p><a href="#titulo">Volver</a></p>
 
     <script src="scripts/main.js"></script>
-
-</body>
+  </body>
+  <footer>
+    <address class="">Valladolid, España</address>
+    <small>
+      &copy; <time datetime="2020-05-25" pubdate>2020</time>
+      <!--Enlace que abre aplicación para enviar correo automáticamente.-->
+      <cite id="contacto">J.J. Lorenzo Gutiérrez</cite>
+      <a href="mailto:juanjolorenzogutierrez@gmail.com"><img id="carta" src="images/carta.png" alt="" width="18"></a>
+    </small>
+  </footer>
 </html>
