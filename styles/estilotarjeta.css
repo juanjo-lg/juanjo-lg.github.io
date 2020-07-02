@@ -67,6 +67,7 @@ img {
 }
 
 aside {
+  padding: 0px 50px;
   background-color: #ABABAB;
   border-radius: 20px;
   border: 2px solid;
