@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  width: 400px;
+  width: 500px;
   margin: auto;
   text-align: center;
 }
@@ -80,7 +80,7 @@ footer {
 }
 
 .titulo {
-  margin: 10px 80px;
+  margin: 10px 120px;
   text-align: left;
 }
 
@@ -115,7 +115,7 @@ span > p {
   padding-right: 20px;
 }
 
-.estudios, .obras {
+.estudios, .obras, .idiomas, .software, .cursos {
   margin: 20px 20px;
   text-align: justify;
   font-style: normal;
