@@ -122,6 +122,11 @@ span > p {
   font-style: normal;
 }
 
+.software, .idiomas {
+  list-style: none;
+  text-align: center;
+}
+
 .trabajos {
   margin: 20px 0px;
   text-decoration: underline;
