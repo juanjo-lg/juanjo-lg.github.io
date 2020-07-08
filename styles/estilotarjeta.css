@@ -17,9 +17,12 @@ body {
 
 header {
   border-radius: 20px;
-  background-color: #ABABAB;
+  /*background-color: #ABABAB;*/
   border: 2px solid;
   margin: 20px 0px;
+  box-shadow: black 10px 10px 10px;
+  /*Forma de añadir un gradiente al fondo del elemento desde una posición y desde un color a otro.*/
+  background: -moz-linear-gradient(top, #ABABAB, #666666);
 }
 
 nav {
@@ -27,6 +30,7 @@ nav {
   border: 2px solid;
   padding: 5px;
   border-radius: 20px;
+  box-shadow: black 10px 10px 10px;
 }
 
 section {
@@ -37,6 +41,7 @@ section {
   /*Radio para los bordes de la tarjeta y margenes para que quede separada del la barra de navegaciñon y del aside.*/
   border-radius: 20px;
   margin: 20px 0px;
+  box-shadow: black 10px 10px 10px;
 }
 
 .titulo {
@@ -71,6 +76,7 @@ aside {
   background-color: #ABABAB;
   border-radius: 20px;
   border: 2px solid;
+  box-shadow: black 10px 10px 10px;
 }
 
 footer {
@@ -78,6 +84,7 @@ footer {
   background-color: #ABABAB;
   border: 2px solid;
   margin: 10px 0px;
+  box-shadow: black 10px 10px 10px;
 }
 
 .titulo {
@@ -140,4 +147,8 @@ span > p {
 
 #volver {
   background-color: #ABABAB;
+}
+
+h3 {
+  font-size: 18px;
 }
