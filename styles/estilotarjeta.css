@@ -22,7 +22,19 @@ header {
   margin: 20px 0px;
   box-shadow: black 10px 10px 10px;
   /*Forma de añadir un gradiente al fondo del elemento desde una posición y desde un color a otro.*/
+  /*Compatibilidad con firefox*/
   background: -moz-linear-gradient(top, #ABABAB, #666666);
+  /*Compatibilidad con Chrome y Safari*/
+  background: -webkit-linear-gradient(top, #ABABAB, #666666);
+  /*Compatibilidad con Opera*/
+  background: -o-linear-gradient(top, #ABABAB, #666666);
+  /*especifica la duración de la transición, el tipo y el tiempo que tarda en iniciar.*/
+  transition: transform 1s ease-in-out 0s;
+}
+
+/*Pseudoclase que hace que se lleve a cabo en la cabecera al pasar el ratón por encima.*/
+header:hover {
+  transform: rotate(5deg);
 }
 
 nav {
