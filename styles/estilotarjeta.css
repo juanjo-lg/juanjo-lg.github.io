@@ -15,7 +15,7 @@ body {
   text-align: center;
 }
 
-header {
+header, nav, aside, footer {
   border-radius: 20px;
   /*background-color: #ABABAB;*/
   border: 2px solid;
@@ -28,21 +28,24 @@ header {
   background: -webkit-linear-gradient(top, #ABABAB, #666666);
   /*Compatibilidad con Opera*/
   background: -o-linear-gradient(top, #ABABAB, #666666);
+}
+
+header {
   /*especifica la duración de la transición, el tipo y el tiempo que tarda en iniciar.*/
   transition: transform 1s ease-in-out 0s;
 }
 
 /*Pseudoclase que hace que se lleve a cabo en la cabecera al pasar el ratón por encima.*/
 header:hover {
-  transform: rotate(5deg);
+  transform: rotate(3deg);
 }
 
 nav {
-  background-color: #ABABAB;
-  border: 2px solid;
+  /*background-color: #ABABAB;
+  border: 2px solid;*/
   padding: 5px;
-  border-radius: 20px;
-  box-shadow: black 10px 10px 10px;
+  /*border-radius: 20px;
+  box-shadow: black 10px 10px 10px;*/
 }
 
 section {
@@ -56,47 +59,24 @@ section {
   box-shadow: black 10px 10px 10px;
 }
 
-.titulo {
-  margin: 10px 80px;
-  text-align: left;
-}
-
-li {
-  margin: 10px 60px;
-  text-align: left;
-}
-
-/*Quita los subrayados de los links.*/
-a {
-  text-decoration: none;
-  color: black;
-}
-
-/*Alinea los logos con el texto*/
-img {
-  vertical-align: bottom;
-}
-
-/*Alinea la carta con el texto del copyright*/
-#carta {
-  vertical-align: middle;
-  margin: 0px 5px;
-}
-
 aside {
   padding: 0px 50px;
-  background-color: #ABABAB;
+  /*background-color: #ABABAB;
   border-radius: 20px;
   border: 2px solid;
-  box-shadow: black 10px 10px 10px;
+  box-shadow: black 10px 10px 10px;*/
 }
 
 footer {
-  border-radius: 20px;
+  /*border-radius: 20px;
   background-color: #ABABAB;
   border: 2px solid;
+  box-shadow: black 10px 10px 10px;*/
   margin: 10px 0px;
-  box-shadow: black 10px 10px 10px;
+}
+
+h1 {
+  margin: auto;
 }
 
 .titulo {
@@ -104,15 +84,26 @@ footer {
   text-align: left;
 }
 
-li {
-  margin: 0px 60px;
-  text-align: left;
+h3 {
+  font-size: 18px;
 }
 
 /*Quita los subrayados de los links.*/
 a {
   text-decoration: none;
   color: black;
+}
+
+li {
+  margin: 0px 60px;
+  text-align: left;
+}
+
+/*Los <p> que sean hijos de span*/
+span > p {
+  text-align: justify;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 img {
@@ -124,15 +115,8 @@ img {
   margin: 0px 5px;
 }
 
-h1 {
-  margin: auto;
-}
-
-/*Los <p> que sean hijos de span*/
-span > p {
-  text-align: justify;
-  padding-left: 20px;
-  padding-right: 20px;
+#nombre {
+  text-shadow: #666666 5px 5px 5px;
 }
 
 .estudios, .obras, .idiomas, .software, .cursos {
@@ -159,8 +143,4 @@ span > p {
 
 #volver {
   background-color: #ABABAB;
-}
-
-h3 {
-  font-size: 18px;
 }
