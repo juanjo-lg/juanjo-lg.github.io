@@ -6,7 +6,8 @@ html {
   background-image: url('../images/Foto_MDC.png');
   background-size: cover;
   background-repeat: no-repeat;
-  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Montserrat', sans-serif;*/
 }
 
 body {
@@ -116,7 +117,7 @@ img {
 }
 
 #nombre {
-  text-shadow: #666666 5px 5px 5px;
+  text-shadow: #666666 3px 3px 7px;
 }
 
 .estudios, .obras, .idiomas, .software, .cursos {
