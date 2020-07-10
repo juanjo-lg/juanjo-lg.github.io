@@ -60,6 +60,20 @@ section {
   box-shadow: black 10px 10px 10px;
 }
 
+.caja-1, .caja-2, .caja-3 {
+  float: left;
+  width: auto;
+  margin: 15px;
+  text-align: center;
+  border: solid black 2px;
+  /*margin-right: 40px;*/
+
+}
+
+.clear-float{
+  clear: both;
+}
+
 aside {
   padding: 0px 50px;
   /*background-color: #ABABAB;
