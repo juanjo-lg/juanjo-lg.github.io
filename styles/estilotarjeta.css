@@ -160,6 +160,13 @@ img {
   background-color: #ABABAB;
 }
 
+#modelo {
+  background-color: white
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
 model-viewer {
     width: 100%;
     height: 100%;
