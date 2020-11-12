@@ -161,12 +161,12 @@ img {
 }
 
 #model {
-  width: 1000;
-  height: 1000;
+  width: 1000px;
+  height: 1000px;
 }
 
 model-viewer {
-    width: 1000;
-    height: 1000;
+    width: 1000px;
+    height: 1000px;
     outline: none;
 }
