@@ -1,0 +1,10 @@
+/*Estilos css para vistas 3D.*/
+html {
+  background-color:  #9AB8DA;
+}
+
+model-viewer {
+    width: 1000px;
+    height: 1000px;
+    outline: none;
+}

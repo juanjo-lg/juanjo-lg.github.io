@@ -3,7 +3,7 @@
 html {
   background-color: white;
   /*background-image: url("images/CYL.png");*/
-  /*background-image: url('../images/Foto_MDC.png');*/
+  background-image: url('../images/Foto_MDC.png');
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Open Sans', sans-serif;
@@ -158,10 +158,4 @@ img {
 
 #volver {
   background-color: #ABABAB;
-}
-
-model-viewer {
-    width: 1000px;
-    height: 1000px;
-    outline: none;
 }
