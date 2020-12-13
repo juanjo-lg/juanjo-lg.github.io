@@ -20,9 +20,10 @@ button {
 
 button[slot="hotspot-puerta"]:not([data-visible]) {
   background-color: transparent;
+  border: 3px solid grey;
 }
 
-/*#annotation{
+#annotation{
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
@@ -36,7 +37,7 @@ button[slot="hotspot-puerta"]:not([data-visible]) {
   height: max-content;
   transform: translate3d(-50%, -50%, 0);
   --min-hotspot-opacity: 0;
-}*/
+}
 
 /* This keeps child nodes hidden while the element loads */
 :not(:defined) > * {
