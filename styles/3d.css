@@ -4,9 +4,9 @@ html {
 }
 
 model-viewer {
-    width: 1000px;
-    height: 1000px;
-    outline: none;
+  width: 1000px;
+  height: 1000px;
+  outline: none;
 }
 
 button {
@@ -25,10 +25,10 @@ button[slot="hotspot-puerta"]:not([data-visible]) {
 
 #annotation{
   background-color: #888888;
-    position: absolute;
-    transform: translate(10px, 10px);
-    border-radius: 10px;
-    padding: 10px;
+  position: absolute;
+  transform: translate(10px, 10px);
+  border-radius: 10px;
+  padding: 10px;
 }
 
 /* This keeps child nodes hidden while the element loads */
