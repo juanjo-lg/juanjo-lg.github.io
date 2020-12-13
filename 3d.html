@@ -1,0 +1,90 @@
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Modelo de muralla 3D">
+        <meta name="author" content="Juanjo Lorenzo Gutiérrez">
+        <link rel="stylesheet" href="styles/3d.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <title>Modelo 3D-3 - Muralla</title>
+    </head>
+    <body>
+        <model-viewer src="Muralla_2.glb" shadow-intensity="2" shadow-softness="1" poster="poster.png" camera-controls min-camera-orbit="100deg 32deg auto" max-camera-orbit="180deg 126deg 72.06m" min-field-of-view="auto" max-field-of-view="auto" camera-orbit="156.6deg 89.22deg 72.06m" exposure="1.5">
+            <button class="Hotspot" slot="hotspot-3" data-position="13.24748649015429m 74.26771018809505m 48.420233311067754m" data-normal="0.9854043816154762m 0.03010124445543551m -0.16754736576638649m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Muralla</div>
+            </button><button class="Hotspot" slot="hotspot-5" data-position="18.000438921520757m 78.1053150204156m 54.954169118171045m" data-normal="0.9872555677442837m -0.0854900018747725m -0.13423078461129373m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Torre</div>
+            </button><button class="Hotspot" slot="hotspot-6" data-position="36.47935553842568m 78.49811380749286m 71.41299918902526m" data-normal="-0.022331324906592735m 0.41410188762142996m -0.9099565586313914m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Puerta</div>
+            </button><button class="Hotspot" slot="hotspot-7" data-position="41.8604308031658m 74.24879820303696m 79.68517689419002m" data-normal="0.9974569584454043m -0.0016870702040847113m -0.07125145502352596m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Hotel</div>
+            </button>
+        </model-viewer>
+    </body>
+    
+    <!-- Loads model-viewer for modern browsers -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <!-- Loads model-viewer for older browsers -->
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+    <style>
+    .Hotspot {
+        background: #fff;
+        border-radius: 32px;
+        border: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        box-sizing: border-box;
+        cursor: pointer;
+        height: 24px;
+        padding: 8px;
+        position: relative;
+        transition: opacity 0.3s;
+        width: 24px;
+    }
+
+    .Hotspot:not([data-visible]) {
+        background: transparent;
+        border: 4px solid #fff;
+        box-shadow: none;
+        height: 32px;
+        pointer-events: none;
+        width: 32px;
+    }
+
+    .Hotspot:focus {
+        border: 4px solid rgb(0, 128, 200);
+        height: 32px;
+        outline: none;
+        width: 32px;
+    }
+
+    .Hotspot>* {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+
+    .HotspotAnnotation {
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        color: rgba(0, 0, 0, 0.8);
+        display: block;
+        font-family: Futura, Helvetica Neue, sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        left: calc(100% + 1em);
+        max-width: 128px;
+        overflow-wrap: break-word;
+        padding: 0.5em 1em;
+        position: absolute;
+        top: 50%;
+        width: max-content;
+    }
+
+    .Hotspot:not([data-visible])>* {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(calc(-50% + 4px));
+        transition: transform 0.3s, opacity 0.3s;
+    }
+    </style>
+</html>
