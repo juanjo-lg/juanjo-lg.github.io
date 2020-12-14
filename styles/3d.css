@@ -35,11 +35,3 @@ button[slot="hotspot-puerta"]:not([data-visible]) {
 :not(:defined) > * {
   display: none;
 }
-
-#controls {
-   position: absolute;
-   bottom: 16px;
-   left: 16px;
-   max-width: unset;
-   transform: unset;
- }

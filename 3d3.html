@@ -28,9 +28,9 @@
               <label for="show-info">Info</label>
               <input id="show-info" type="checkbox" checked><br>
               <label for="show-area">Área</label>
-              <input id="show-area" type="checkbox"><br>
+              <input id="show-area" type="checkbox" unchecked><br>
               <label for="show-volume">Volumen</label>
-              <input id="show-volume" type="checkbox"><br>
+              <input id="show-volume" type="checkbox" unchecked><br>
             </div>
         </model-viewer>
     </body>
@@ -41,6 +41,14 @@
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 
     <style>
+    #controls {
+       position: absolute;
+       bottom: 16px;
+       left: 16px;
+       max-width: unset;
+       transform: unset;
+     }
+
     .Hotspot {
         background: #fff;
         border-radius: 32px;
