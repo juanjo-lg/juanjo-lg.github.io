@@ -18,9 +18,22 @@
             </button><button class="Hotspot" slot="hotspot-7" data-position="41.8604308031658m 74.24879820303696m 79.68517689419002m" data-normal="0.9974569584454043m -0.0016870702040847113m -0.07125145502352596m" data-visibility-attribute="visible">
                 <div class="HotspotAnnotation">Hotel</div>
             </button>
+            <div id="controls" class="">
+              <label for="src">Modelo:</label>
+              <select id="src" class="" name="">
+                <option value="Muralla_2.glb">Muralla - El Salvador</option>
+                <option value="Talavera">Talavera - Dron</option>
+              </select><br>
+
+              <label for="show-info">Info</label>
+              <input id="show-info" type="textbox" checked="true"><br>
+              <label for="show-area">Área</label>
+              <input id="show-area" type="textbox" checked="false"><br>
+              <label for="show-volume">Volumen</label>
+              <input id="show-volume" type="textbox" checked="false"><br>
+            </div>
         </model-viewer>
     </body>
-    
 
     <!-- Loads model-viewer for modern browsers -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
