@@ -46,15 +46,18 @@
 
       modelViewer.querySelector('#src').addEventListener('input', (event) => {
         modelViewer.src = event.target.value;
-        alert(modelViewer.src);
-        //if (modelViewer.src == "Talavera.glb") {
-          //modelViewer.min-camera-orbit="-45deg 90deg auto";
-          //modelViewer.max-camera-orbit="45deg 180deg 339.9m";
-          //modelViewer.min-field-of-view="auto";
-          //modelViewer.max-field-of-view="auto";
-          //modelViewer.camera-orbit="0.36deg 90deg 339.9m" exposure="1.5";
-        //};
+        if (modelViewer.src == "Talavera.glb") {
+          alert(modelViewer.src);
+        }
+        //alert(modelViewer.src);
       });
+      //if (modelViewer.src == "Talavera.glb") {
+        //modelViewer.min-camera-orbit="-45deg 90deg auto";
+        //modelViewer.max-camera-orbit="45deg 180deg 339.9m";
+        //modelViewer.min-field-of-view="auto";
+        //modelViewer.max-field-of-view="auto";
+        //modelViewer.camera-orbit="0.36deg 90deg 339.9m" exposure="1.5";
+      //};
     </script>
 
     <style>
