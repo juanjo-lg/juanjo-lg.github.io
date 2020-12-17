@@ -47,7 +47,8 @@
       modelViewer.querySelector('#src').addEventListener('input', (event) => {
         modelViewer.src = event.target.value;
         if (modelViewer.src == "Talavera.glb") {
-          alert(modelViewer.camera-orbit);
+          alert(modelViewer.src);
+          modelViewer.setAttribute("camera-orbit", "0.36deg 90deg 339.9m");
         }
         //alert(modelViewer.src);
       });
