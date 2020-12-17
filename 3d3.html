@@ -48,6 +48,10 @@
         modelViewer.src = event.target.value;
         if (modelViewer.src == "Talavera.glb") {
           alert(modelViewer.src);
+          modelViewer.setAttribute("min-camera-orbit", "-45deg 90deg auto");
+          modelViewer.setAttribute("max-camera-orbit", "45deg 180deg 339.9m");
+          modelViewer.setAttribute("min-field-of-view", "auto")
+          modelViewer.setAttribute("max-field-of-view", "auto")
           modelViewer.setAttribute("camera-orbit", "0.36deg 90deg 339.9m");
         }
         //alert(modelViewer.src);
