@@ -64,6 +64,19 @@
           modelViewer.setAttribute("camera-orbit", "156.6deg 89.22deg 72.06m");
         }
       });
+
+      const checkinfo = modelViewer.querySelector('#show-info');
+      //Hacer apàrecer y desaparecer las etiquetas.
+      checkinfo.addEventListener('change', () => {
+        modelViewer.querySelectorAll('button').forEach((hotspot) => {
+          if (checkinfo.checked) {
+            hotspot.classList.remove('hide');
+          } else {
+            hotspot.classList.add('hide');
+          }
+        });
+      });
+
     </script>
 
     <style>
@@ -133,6 +146,11 @@
         pointer-events: none;
         transform: translateY(calc(-50% + 4px));
         transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /*Esto hace que se puedan ocultar las etiquetas*/
+    .hide {
+      display: none;
     }
     </style>
 </html>
