@@ -47,22 +47,23 @@
       modelViewer.querySelector('#src').addEventListener('input', (event) => {
         modelViewer.src = event.target.value;
         if (modelViewer.src == "Talavera.glb") {
-          alert(modelViewer.src);
+          //Cambio en los atributos del modelo al cambiar la fuente.
+          modelViewer.setAttribute("shadow-intensity", "0")
           modelViewer.setAttribute("min-camera-orbit", "-45deg 90deg auto");
           modelViewer.setAttribute("max-camera-orbit", "45deg 180deg 339.9m");
           modelViewer.setAttribute("min-field-of-view", "auto");
           modelViewer.setAttribute("max-field-of-view", "auto");
           modelViewer.setAttribute("camera-orbit", "0.36deg 90deg 339.9m");
         }
-        //alert(modelViewer.src);
+        if (modelViewer.src == "Muralla_2.glb") {
+          modelViewer.setAttribute("shadow-intensity", "2")
+          modelViewer.setAttribute("min-camera-orbit", "100deg 32deg auto");
+          modelViewer.setAttribute("max-camera-orbit", "180deg 126deg 72.06m");
+          modelViewer.setAttribute("min-field-of-view", "auto");
+          modelViewer.setAttribute("max-field-of-view", "auto");
+          modelViewer.setAttribute("camera-orbit", "156.6deg 89.22deg 72.06m");
+        }
       });
-      //if (modelViewer.src == "Talavera.glb") {
-        //modelViewer.min-camera-orbit="-45deg 90deg auto";
-        //modelViewer.max-camera-orbit="45deg 180deg 339.9m";
-        //modelViewer.min-field-of-view="auto";
-        //modelViewer.max-field-of-view="auto";
-        //modelViewer.camera-orbit="0.36deg 90deg 339.9m" exposure="1.5";
-      //};
     </script>
 
     <style>
