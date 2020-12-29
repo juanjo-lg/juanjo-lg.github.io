@@ -72,13 +72,7 @@
       checkinfo.addEventListener('change', () => {
         modelViewer.querySelectorAll('button').forEach((hotspot) => {
           if (checkinfo.checked) {
-            if (modelViewer.src == "Muralla_2.glb") {
-              hotspot_m1.classList.remove('hide');
-              hotspot_m2.classList.add('hide');
-            } else {
-              hotspot_m1.classList.add('hide');
-              hotspot_m2.classList.remove('hide');
-            }
+            hotspot_m1.classList.remove('hide');
           } else {
             hotspot_m1.classList.add('hide');
           }
