@@ -1,6 +1,6 @@
 <html lang="es" dir="ltr">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta name="keywords" content="Modelo de muralla 3D">
         <meta name="author" content="Juanjo Lorenzo Gutiérrez">
         <link rel="stylesheet" href="styles/3d.css">
@@ -8,7 +8,7 @@
         <title>Modelo 3D-3 - Muralla</title>
     </head>
     <body>
-        <model-viewer src="Muralla_2.glb" shadow-intensity="2" shadow-softness="1" poster="poster.png" camera-controls min-camera-orbit="100deg 32deg auto" max-camera-orbit="180deg 126deg 72.06m" min-field-of-view="auto" max-field-of-view="auto" camera-orbit="156.6deg 89.22deg 72.06m" exposure="1.5">
+        <model-viewer id="model" src="Muralla_2.glb" shadow-intensity="2" shadow-softness="1" poster="poster.png" camera-controls min-camera-orbit="100deg 32deg auto" max-camera-orbit="180deg 126deg 72.06m" min-field-of-view="auto" max-field-of-view="auto" camera-orbit="156.6deg 89.22deg 72.06m" exposure="1.5">
             <button class="Hotspot" slot="hotspot-3" data-position="13.24748649015429m 74.26771018809505m 48.420233311067754m" data-normal="0.9854043816154762m 0.03010124445543551m -0.16754736576638649m" data-visibility-attribute="visible">
                 <div class="HotspotAnnotation">Muralla</div>
             </button><button class="Hotspot" slot="hotspot-5" data-position="18.000438921520757m 78.1053150204156m 54.954169118171045m" data-normal="0.9872555677442837m -0.0854900018747725m -0.13423078461129373m" data-visibility-attribute="visible">
@@ -18,15 +18,75 @@
             </button><button class="Hotspot" slot="hotspot-7" data-position="41.8604308031658m 74.24879820303696m 79.68517689419002m" data-normal="0.9974569584454043m -0.0016870702040847113m -0.07125145502352596m" data-visibility-attribute="visible">
                 <div class="HotspotAnnotation">Hotel</div>
             </button>
+            <div id="controls" class="Annotation">
+              <label for="src">Modelo:</label>
+              <select id="src" class="" name="">
+                <option value="Muralla_2.glb">Muralla - El Salvador</option>
+                <option value="Talavera.glb">Talavera - Dron</option>
+              </select><br>
+
+              <label for="show-info">Info</label>
+              <input id="show-info" type="checkbox" checked><br>
+              <label for="show-area">Área</label>
+              <input id="show-area" type="checkbox"><br>
+              <label for="show-volume">Volumen</label>
+              <input id="show-volume" type="checkbox">
+            </div>
         </model-viewer>
     </body>
-    
+
     <!-- Loads model-viewer for modern browsers -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <!-- Loads model-viewer for older browsers -->
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 
+    <!-- Script para cambiar de un modelo a otro según la opción escogida. -->
+    <script type="module">
+      const modelViewer = document.querySelector('#model');
+
+      modelViewer.querySelector('#src').addEventListener('input', (event) => {
+        modelViewer.src = event.target.value;
+        if (modelViewer.src == "Talavera.glb") {
+          //Cambio en los atributos del modelo al cambiar la fuente.
+          modelViewer.setAttribute("shadow-intensity", "0")
+          modelViewer.setAttribute("min-camera-orbit", "-45deg 90deg auto");
+          modelViewer.setAttribute("max-camera-orbit", "45deg 180deg 339.9m");
+          modelViewer.setAttribute("min-field-of-view", "auto");
+          modelViewer.setAttribute("max-field-of-view", "auto");
+          modelViewer.setAttribute("camera-orbit", "0.36deg 90deg 339.9m");
+        }
+        if (modelViewer.src == "Muralla_2.glb") {
+          modelViewer.setAttribute("shadow-intensity", "2")
+          modelViewer.setAttribute("min-camera-orbit", "100deg 32deg auto");
+          modelViewer.setAttribute("max-camera-orbit", "180deg 126deg 72.06m");
+          modelViewer.setAttribute("min-field-of-view", "auto");
+          modelViewer.setAttribute("max-field-of-view", "auto");
+          modelViewer.setAttribute("camera-orbit", "156.6deg 89.22deg 72.06m");
+        }
+      });
+
+      const checkinfo = modelViewer.querySelector('#show-info');
+      //Hacer apàrecer y desaparecer las etiquetas.
+      checkinfo.addEventListener('change', () => {
+        modelViewer.querySelectorAll('button').forEach((hotspot) => {
+          if (checkinfo.checked) {
+            hotspot.classList.remove('hide');
+          } else {
+            hotspot.classList.add('hide');
+          }
+        });
+      });
+    </script>
+
     <style>
+    #controls {
+       position: absolute;
+       bottom: 16px;
+       left: 16px;
+       max-width: unset;
+       transform: unset;
+     }
+
     .Hotspot {
         background: #fff;
         border-radius: 32px;
@@ -62,7 +122,7 @@
         transform: translateY(-50%);
     }
 
-    .HotspotAnnotation {
+    .HotspotAnnotation, .Annotation {
         background: #fff;
         border-radius: 4px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
@@ -85,6 +145,11 @@
         pointer-events: none;
         transform: translateY(calc(-50% + 4px));
         transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /*Esto hace que se puedan ocultar las etiquetas*/
+    .hide {
+      display: none;
     }
     </style>
 </html>
