@@ -44,6 +44,31 @@
 
     <!-- Script para cambiar de un modelo a otro según la opción escogida. -->
     <script type="module">
+      // Objetos con la información de cada elemento.
+      var muralla = {
+        nombre: "Muralla",
+        area: "25 m2",
+        volumen: "47 m3"
+      };
+
+      var torre = {
+        nombre: "Torre",
+        area: "21 m2",
+        volumen "60 m3":
+      };
+
+      var puerta = {
+        nombre: "Puerta",
+        area: "27 m2",
+        volumen: "30 m3"
+      };
+
+      var hotel = {
+        nombre: "Hotel",
+        area: "15 m2",
+        volumen: "80 m3"
+      };
+
       const modelViewer = document.querySelector('#model');
 
       modelViewer.querySelector('#src').addEventListener('input', (event) => {
@@ -78,6 +103,17 @@
           }
         });
       });
+
+      const checkarea = modelViewer.querySelector('#show-area');
+      checkarea.addEventListener('change', () => {
+        modelViewer.querySelectorAll('button').forEach((hotspot) => {
+          if (checkarea.checked) {
+            modelViewer.getElementsByClassName('HotspotAnnotation').innerHTML = ' '+'area';
+          }
+        });
+      });
+
+
     </script>
 
     <style>
