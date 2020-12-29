@@ -70,9 +70,9 @@
       checkinfo.addEventListener('change', () => {
         modelViewer.querySelectorAll('button').forEach((hotspot) => {
           if (checkinfo.checked) {
-            hotspot_m1.classList.remove('hide');
+            hotspot.classList.remove('hide');
           } else {
-            hotspot_m1.classList.add('hide');
+            hotspot.classList.add('hide');
           }
         });
       });
