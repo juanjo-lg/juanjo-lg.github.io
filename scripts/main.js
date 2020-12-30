@@ -2,14 +2,13 @@
 
 
 
-var miImage = document.querySelector('img');
- miImage.onclick = function () {
+var miImage = document.querySelector('img'); miImage.onclick = function () {
      var miSrc = miImage.getAttribute('src');
      if (miSrc === '/images/foto_carnet.jpg') {
          miImage.setAttribute('src', '/images/test.png');
      } else {
          miImage.setAttribute('src', '/images/foto_carnet.jpg');
-     } 
+     }
  }
 
 var miBoton = document.querySelector('button');
