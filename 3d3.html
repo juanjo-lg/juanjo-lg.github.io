@@ -103,11 +103,14 @@
         });
       });
 
+      let annotation = modelViewer.getElementsByClassName('HotspotAnnotation');
+
       const checkarea = modelViewer.querySelector('#show-area');
       checkarea.addEventListener('change', () => {
         modelViewer.querySelectorAll('button').forEach((hotspot) => {
           if (checkarea.checked) {
-            modelViewer.getElementsByClassName('HotspotAnnotation').innerHTML = ' '+'area';
+            alert(annotation);
+            /*modelViewer.getElementsByClassName('HotspotAnnotation').innerHTML = ' '+'area';*/
           } else {
             alert("hola");
           }
