@@ -109,7 +109,7 @@
       checkarea.addEventListener('change', () => {
         modelViewer.querySelectorAll('button').forEach((hotspot) => {
           if (checkarea.checked) {
-            alert(annotation);
+            hotspot.classList.innerHTML = ' '+'area';
             /*modelViewer.getElementsByClassName('HotspotAnnotation').innerHTML = ' '+'area';*/
           } else {
             alert("hola");
