@@ -106,17 +106,24 @@
       let annotation = modelViewer.getElementsByClassName('HotspotAnnotation');
 
       const checkarea = modelViewer.querySelector('#show-area');
-      checkarea.addEventListener('change', () => {
+      /*checkarea.addEventListener('change', () => {
         modelViewer.querySelectorAll('button').forEach((hotspot) => {
           if (checkarea.checked) {
-            hotspot.classList.innerHTML = ' '+'area';
-            /*modelViewer.getElementsByClassName('HotspotAnnotation').innerHTML = ' '+'area';*/
+            modelViewer.getElementsByClassName('HotspotAnnotation').innerHTML = ' '+'area';
           } else {
             alert("hola");
           }
         });
-      });
-
+      });*/
+      checkarea.addEventListener('change', () => {
+          if (checkarea.checked) && (checkinfo.checked) {
+            annotation.forEach((element) => {
+              element.innerHTML = ' ' + 'area';
+            });
+          } else {
+            alert("hola");
+          }
+        });
 
     </script>
 
