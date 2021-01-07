@@ -117,7 +117,9 @@
       });*/
       checkarea.addEventListener('change', () => {
           if (checkarea.checked && checkinfo.checked) {
-            alert(typeof(annotation));
+            for (let i in annotation) {
+              alert(i);
+            }
           } else {
             alert("hola");
           }
