@@ -92,7 +92,7 @@
       });
 
       const checkinfo = modelViewer.querySelector('#show-info');
-      //Hacer apàrecer y desaparecer las etiquetas.
+      //Hacer aparecer y desaparecer las etiquetas.
       checkinfo.addEventListener('change', () => {
         modelViewer.querySelectorAll('button').forEach((hotspot) => {
           if (checkinfo.checked) {
@@ -112,13 +112,12 @@
             modelViewer.getElementsByClassName('HotspotAnnotation').innerHTML = ' '+'area';
           } else {
             alert("hola");
-          }
-        });
+          }        });
       });*/
       checkarea.addEventListener('change', () => {
           if (checkarea.checked && checkinfo.checked) {
             for (let i in annotation) {
-              alert(i[0].innerHTML);
+              alert(i.innerHTML);
             }
           } else {
             alert("hola");
