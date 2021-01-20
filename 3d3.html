@@ -117,8 +117,8 @@
       checkarea.addEventListener('change', () => {
           if (checkarea.checked && checkinfo.checked) {
             //bucle con los div.
-            for (let i in annotation) {
-              alert(i);
+            for (var i in annotation) {
+              alert(i.innerText);
             }
           } else {
             alert("hola");
