@@ -125,7 +125,7 @@
             }*/
             for (var i = 0; i < annotation.length; i++) {
               //var texto = annotation[i].innerText;
-              annotation[i].textContent = "${names[i]}"+"<br/>"+"${areas[i]}";
+              annotation[i].innerHTML = "${names[i]} <br/> ${areas[i]}";
             }
           } else {
             //alert("hola");
