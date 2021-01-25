@@ -125,13 +125,13 @@
             }*/
             for (var i = 0; i < annotation.length; i++) {
               //var texto = annotation[i].innerText;
-              annotation[i].innerHTML = names[i] + "\n" + areas[i];
+              annotation[i].textContent = names[i] + "\n" + areas[i];
             }
           } else {
             //alert("hola");
               for (var i = 0; i < annotation.length; i++) {
                 //var texto = annotation[i].innerText;
-                annotation[i].innerHTML -= names[i];
+                annotation[i].textContent = names[i];
               }
           }
         });
