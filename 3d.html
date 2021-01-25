@@ -98,8 +98,6 @@
         });
       });
 
-      
-
       //selector con el checkbox de área.
       const checkarea = modelViewer.querySelector('#show-area');
 
@@ -121,6 +119,21 @@
 
       //selector con el checkbox de volúmenes.
       const checkvolume = modelViewer.querySelector('#show-volume');
+
+      //Evento para mostrar la información de los volúmenes.
+      checkvolume.addEventListener('change', () => {
+        if (checkvolume.checked && checkarea.checked) {
+          for (var i = 0; i < annotation.length; i++) {
+            annotation[i].innerHTML = names[i] + "<br>" + areas[i] + "<br>" + volumen[i];
+          }
+        } else if (checkvolume.checked && checkarea.unchecked) {
+          for (var i = 0; i < annotation.length; i++) {
+            annotation[i].innerHTML = names[i] + "<br>" + volumen[i];
+          }
+        } else {
+          //pass
+        }
+      });
 
     </script>
 
