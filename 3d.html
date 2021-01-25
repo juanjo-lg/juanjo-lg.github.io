@@ -67,9 +67,9 @@
         area: "15 m2",
         volumen: "80 m3"
       };*/
-      let names = ["Muralla", "Torre", "Puerta", "Hotel"];
-      let areas = ["25 m2", "21 m2", "27 m2", "15 m2"];
-      let volumen = ["47 m3", "60 m3", "30 m3", "80 m3"];
+      var names = ["Muralla", "Torre", "Puerta", "Hotel"];
+      var areas = ["25 m2", "21 m2", "27 m2", "15 m2"];
+      var volumen = ["47 m3", "60 m3", "30 m3", "80 m3"];
 
       const modelViewer = document.querySelector('#model');
 
@@ -125,7 +125,7 @@
             }*/
             for (var i = 0; i < annotation.length; i++) {
               //var texto = annotation[i].innerText;
-              annotation[i].textContent = names[i] + "\n" + areas[i];
+              annotation[i].textContent = names[i] + "<br/>" + areas[i];
             }
           } else {
             //alert("hola");
