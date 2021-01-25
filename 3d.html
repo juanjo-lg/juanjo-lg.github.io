@@ -44,34 +44,17 @@
 
     <!-- Script para cambiar de un modelo a otro según la opción escogida. -->
     <script type="module">
-      /*var muralla = {
-        nombre: "Muralla",
-        area: "25 m2",
-        volumen: "47 m3"
-      };
 
-      var torre = {
-        nombre: "Torre",
-        area: "21 m2",
-        volumen "60 m3":
-      };
-
-      var puerta = {
-        nombre: "Puerta",
-        area: "27 m2",
-        volumen: "30 m3"
-      };
-
-      var hotel = {
-        nombre: "Hotel",
-        area: "15 m2",
-        volumen: "80 m3"
-      };*/
+      //Variables con la información de nombres, áreas y volumenes.
       var names = ["Muralla", "Torre", "Puerta", "Hotel"];
       var areas = ["25 m2", "21 m2", "27 m2", "15 m2"];
       var volumen = ["47 m3", "60 m3", "30 m3", "80 m3"];
 
+      //Variable con el selector de ModelViewer.
       const modelViewer = document.querySelector('#model');
+
+      //lista con los distintos <div> que muestran la información.
+      let annotation = modelViewer.getElementsByClassName('HotspotAnnotation');
 
       modelViewer.querySelector('#src').addEventListener('input', (event) => {
         modelViewer.src = event.target.value;
@@ -94,51 +77,50 @@
         }
       });
 
+      //selector con el checkbox de información.
       const checkinfo = modelViewer.querySelector('#show-info');
-      //Hacer aparecer y desaparecer las etiquetas.
+      
+      //Evento para hacer aparecer y desaparecer las etiquetas.
       checkinfo.addEventListener('change', () => {
         modelViewer.querySelectorAll('button').forEach((hotspot) => {
           if (checkinfo.checked) {
             hotspot.classList.remove('hide');
           } else {
             hotspot.classList.add('hide');
-            //forma para probar si se desmarca el área.
+            //desmarca las demás casillas de información.
             checkarea.checked = false;
+            checkvolume.checked = false;
+            for (var i = 0; i < annotation.length; i++) {
+              //Al desmarcar la casilla de info, los <div se quedan con la info inicial>.
+              annotation[i].innerHTML = names[i];
+            }
           }
         });
       });
 
-      let annotation = modelViewer.getElementsByClassName('HotspotAnnotation');
+      
 
+      //selector con el checkbox de área.
       const checkarea = modelViewer.querySelector('#show-area');
-      /*checkarea.addEventListener('change', () => {
-        modelViewer.querySelectorAll('button').forEach((hotspot) => {
-          if (checkarea.checked) {
-            modelViewer.getElementsByClassName('HotspotAnnotation').innerHTML = ' '+'area';
-          } else {
-            alert("hola");
-          }        });
-      });*/
+
+      //Evento para mostrar información de área.
       checkarea.addEventListener('change', () => {
           if (checkarea.checked && checkinfo.checked) {
             //bucle con los div.
-            /*for (var i in annotation) {
-              alert(i.innerText);
-            }*/
             for (var i = 0; i < annotation.length; i++) {
-              //var texto = annotation[i].innerText;
-              // Probando de dos maneras distintas.
-              //annotation[i].innerHTML = "${names[i]} <br> ${areas[i]}";
+              //muestra los nombres y las áreas.
               annotation[i].innerHTML = names[i] + "<br>" + areas[i];
             }
           } else {
-            //alert("hola");
               for (var i = 0; i < annotation.length; i++) {
                 //var texto = annotation[i].innerText;
-                annotation[i].textContent = names[i];
+                annotation[i].innerHTML = names[i];
               }
           }
         });
+
+      //selector con el checkbox de volúmenes.
+      const checkvolume = modelViewer.querySelector('#show-volume');
 
     </script>
 
