@@ -113,6 +113,10 @@
             //desmarca las demás casillas de información.
             checkarea.checked = false;
             checkvolume.checked = false;
+            for (var i = 0; i < annotation.length; i++) {
+              //muestra los nombres y las áreas.
+              annotation[i].innerHTML = informacion[i].nombre;
+            }
           }
         });
       });
@@ -133,8 +137,13 @@
                 //var texto = annotation[i].innerText;
                 annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area;
               }
+          } else if (checkarea.unchecked && checkvolume.checked){
+              for (var i = 0; i < annotation.length; i++) {
+              //muestra los nombres y las áreas.
+              annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].volumen;
+              }
           } else {
-            //pass
+            annotation[i].innerHTML = informacion[i].nombre;
           }
         });
 
@@ -150,11 +159,14 @@
           }
         } else if (checkvolume.checked && checkarea.unchecked) {
           for (var i = 0; i < annotation.length; i++) {
-            //muestra los nombres y las áreas.
             annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].volumen;
           }
+        } else if (checkarea.checked && checkvolume.unchecked){
+          for (var i = 0; i < annotation.length; i++) {
+              annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area;
+          }
         } else {
-          //pass
+          annotation[i].innerHTML = informacion[i].nombre;
         }
       });
 
