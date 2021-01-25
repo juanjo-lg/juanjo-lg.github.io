@@ -46,9 +46,32 @@
     <script type="module">
 
       //Variables con la información de nombres, áreas y volumenes.
-      var names = ["Muralla", "Torre", "Puerta", "Hotel"];
-      var areas = ["25 m2", "21 m2", "27 m2", "15 m2"];
-      var volumen = ["47 m3", "60 m3", "30 m3", "80 m3"];
+      //var names = ["Muralla", "Torre", "Puerta", "Hotel"];
+      //var areas = ["25 m2", "21 m2", "27 m2", "15 m2"];
+      //var volumen = ["47 m3", "60 m3", "30 m3", "80 m3"];
+
+      var informacion = [
+        {
+          nombre: 'Muralla',
+          area: '25 m2',
+          volumen: '47 m3'
+        },
+        {
+          nombre: 'Torre',
+          area: '21 m2',
+          volumen: '60 m3'
+        },
+        {
+          nombre: 'Puerta',
+          area: '27 m2',
+          volumen: '30 m3'
+        },
+        {
+          nombre: 'Hotel',
+          area: '15 m2',
+          volumen: '80 m3'
+        }
+      ];
 
       //Variable con el selector de ModelViewer.
       const modelViewer = document.querySelector('#model');
@@ -90,10 +113,6 @@
             //desmarca las demás casillas de información.
             checkarea.checked = false;
             checkvolume.checked = false;
-            for (var i = 0; i < annotation.length; i++) {
-              //Al desmarcar la casilla de info, los <div se quedan con la info inicial>.
-              annotation[i].innerHTML = names[i];
-            }
           }
         });
       });
@@ -103,17 +122,19 @@
 
       //Evento para mostrar información de área.
       checkarea.addEventListener('change', () => {
-          if (checkarea.checked && checkinfo.checked) {
+          if (checkarea.checked && checkvolume.checked) {
             //bucle con los div.
             for (var i = 0; i < annotation.length; i++) {
               //muestra los nombres y las áreas.
-              annotation[i].innerHTML = names[i] + "<br>" + areas[i];
+              annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area + "<br>" + informacion[i].volumen;
             }
-          } else {
+          } else if (checkarea.checked && checkvolume.unchecked){
               for (var i = 0; i < annotation.length; i++) {
                 //var texto = annotation[i].innerText;
-                annotation[i].innerHTML = names[i];
+                annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area;
               }
+          } else {
+            //pass
           }
         });
 
@@ -124,15 +145,16 @@
       checkvolume.addEventListener('change', () => {
         if (checkvolume.checked && checkarea.checked) {
           for (var i = 0; i < annotation.length; i++) {
-            annotation[i].innerHTML = names[i] + "<br>" + areas[i] + "<br>" + volumen[i];
+            //muestra los nombres y las áreas.
+            annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area + "<br>" + informacion[i].volumen;
           }
         } else if (checkvolume.checked && checkarea.unchecked) {
           for (var i = 0; i < annotation.length; i++) {
-            annotation[i].innerHTML = names[i] + "<br>" + volumen[i];
+            //muestra los nombres y las áreas.
+            annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].volumen;
           }
         } else {
           //pass
-          alert("Que pasa?")
         }
       });
 
