@@ -11,15 +11,27 @@
         <model-viewer id="model" src="Muralla_2.glb" shadow-intensity="2" shadow-softness="1" poster="poster.png" camera-controls min-camera-orbit="100deg 32deg auto" max-camera-orbit="180deg 126deg 72.06m" min-field-of-view="auto" max-field-of-view="auto" camera-orbit="156.6deg 89.22deg 72.06m" exposure="1.5">
             <button class="Hotspot" slot="hotspot-1" data-position="13.24748649015429m 74.26771018809505m 48.420233311067754m" data-normal="0.9854043816154762m 0.03010124445543551m -0.16754736576638649m" data-visibility-attribute="visible">
                 <div class="HotspotAnnotation">Muralla</div>
-            </button><button class="Hotspot" slot="hotspot-2" data-position="18.000438921520757m 78.1053150204156m 54.954169118171045m" data-normal="0.9872555677442837m -0.0854900018747725m -0.13423078461129373m" data-visibility-attribute="visible">
+            </button>
+            <button class="Hotspot" slot="hotspot-2" data-position="18.000438921520757m 78.1053150204156m 54.954169118171045m" data-normal="0.9872555677442837m -0.0854900018747725m -0.13423078461129373m" data-visibility-attribute="visible">
                 <div class="HotspotAnnotation">Torre</div>
-            </button><button class="Hotspot" slot="hotspot-3" data-position="36.47935553842568m 78.49811380749286m 71.41299918902526m" data-normal="-0.022331324906592735m 0.41410188762142996m -0.9099565586313914m" data-visibility-attribute="visible">
+            </button>
+            <button class="Hotspot" slot="hotspot-3" data-position="36.47935553842568m 78.49811380749286m 71.41299918902526m" data-normal="-0.022331324906592735m 0.41410188762142996m -0.9099565586313914m" data-visibility-attribute="visible">
                 <div class="HotspotAnnotation">Puerta</div>
-            </button><button class="Hotspot" slot="hotspot-4" data-position="41.8604308031658m 74.24879820303696m 79.68517689419002m" data-normal="0.9974569584454043m -0.0016870702040847113m -0.07125145502352596m" data-visibility-attribute="visible">
+            </button>
+            <button class="Hotspot" slot="hotspot-4" data-position="41.8604308031658m 74.24879820303696m 79.68517689419002m" data-normal="0.9974569584454043m -0.0016870702040847113m -0.07125145502352596m" data-visibility-attribute="visible">
                 <div class="HotspotAnnotation">Hotel</div>
-            </button><!--<button class="Hotspot" slot="hotspot-5" data-position="46.8604308031658m 74.24879820303696m 79.68517689419002m" data-normal="0.9974569584454043m -0.0016870702040847113m -0.07125145502352596m" data-visibility-attribute="visible">
-                <div class="HotspotAnnotation">Yihaaa</div>
-            </button>-->
+            </button>
+            <!--Button de prueba para comprobar el cambio de fuente.-->
+            <button class="Hotspot_2" slot="hotspot-5" data-position="46.8604308031658m 74.24879820303696m 79.68517689419002m" data-normal="0.9974569584454043m -0.0016870702040847113m -0.07125145502352596m" data-visibility-attribute="visible">
+              <div class="HotspotAnnotation">Yihaaaaa</div>
+            </button>
+            <button class="Hotspot_2">
+              <div class="HotspotAnnotation"></div>
+            </button>
+            <button class="Hotspot_2">
+              <div class="HotspotAnnotation"></div>
+            </button>
+
             <div id="controls" class="Annotation">
               <label for="src">Modelo:</label>
               <select id="src" class="" name="">
@@ -45,10 +57,28 @@
     <!-- Script para cambiar de un modelo a otro según la opción escogida. -->
     <script type="module">
 
-      //Variables con la información de nombres, áreas y volumenes.
-      var names = ["Muralla", "Torre", "Puerta", "Hotel"];
-      var areas = ["25 m2", "21 m2", "27 m2", "15 m2"];
-      var volumen = ["47 m3", "60 m3", "30 m3", "80 m3"];
+      var informacion = [
+        {
+          nombre: 'Muralla',
+          area: 'Area: 25 m2',
+          volumen: 'Vol: 47 m3'
+        },
+        {
+          nombre: 'Torre',
+          area: 'Area: 21 m2',
+          volumen: 'Vol: 60 m3'
+        },
+        {
+          nombre: 'Puerta',
+          area: 'Area: 27 m2',
+          volumen: 'Vol: 30 m3'
+        },
+        {
+          nombre: 'Hotel',
+          area: 'Area: 15 m2',
+          volumen: 'Vol: 80 m3'
+        }
+      ];
 
       //Variable con el selector de ModelViewer.
       const modelViewer = document.querySelector('#model');
@@ -66,6 +96,10 @@
           modelViewer.setAttribute("min-field-of-view", "auto");
           modelViewer.setAttribute("max-field-of-view", "auto");
           modelViewer.setAttribute("camera-orbit", "0.36deg 90deg 339.9m");
+          //En caso de que se cambie la fuente, se muestran las etiquetas.
+          modelViewer.querySelectorAll('.Hotspot_2').forEach((hotspot) => {
+            hotspot.classList.remove('hide');
+          });
         }
         if (modelViewer.src == "Muralla_2.glb") {
           modelViewer.setAttribute("shadow-intensity", "2")
@@ -74,12 +108,15 @@
           modelViewer.setAttribute("min-field-of-view", "auto");
           modelViewer.setAttribute("max-field-of-view", "auto");
           modelViewer.setAttribute("camera-orbit", "156.6deg 89.22deg 72.06m");
+          modelViewer.querySelectorAll('.Hotspot_2').forEach((hotspot) => {
+            hotspot.classList.add('hide');
+          });
         }
       });
 
       //selector con el checkbox de información.
       const checkinfo = modelViewer.querySelector('#show-info');
-      
+
       //Evento para hacer aparecer y desaparecer las etiquetas.
       checkinfo.addEventListener('change', () => {
         modelViewer.querySelectorAll('button').forEach((hotspot) => {
@@ -91,8 +128,8 @@
             checkarea.checked = false;
             checkvolume.checked = false;
             for (var i = 0; i < annotation.length; i++) {
-              //Al desmarcar la casilla de info, los <div se quedan con la info inicial>.
-              annotation[i].innerHTML = names[i];
+              //muestra los nombres y las áreas.
+              annotation[i].innerHTML = informacion[i].nombre;
             }
           }
         });
@@ -103,17 +140,26 @@
 
       //Evento para mostrar información de área.
       checkarea.addEventListener('change', () => {
-          if (checkarea.checked && checkinfo.checked) {
+          if (checkarea.checked && checkvolume.checked) {
             //bucle con los div.
             for (var i = 0; i < annotation.length; i++) {
               //muestra los nombres y las áreas.
-              annotation[i].innerHTML = names[i] + "<br>" + areas[i];
+              annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area + "<br>" + informacion[i].volumen;
             }
-          } else {
+          } else if (checkarea.checked && !checkvolume.checked){
               for (var i = 0; i < annotation.length; i++) {
                 //var texto = annotation[i].innerText;
-                annotation[i].innerHTML = names[i];
+                annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area;
               }
+          } else if (!checkarea.checked && checkvolume.checked){
+              for (var i = 0; i < annotation.length; i++) {
+              //muestra los nombres y las áreas.
+              annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].volumen;
+              }
+          } else {
+            for (var i = 0; i < annotation.length; i++) {
+              annotation[i].innerHTML = informacion[i].nombre;
+            }
           }
         });
 
@@ -124,15 +170,21 @@
       checkvolume.addEventListener('change', () => {
         if (checkvolume.checked && checkarea.checked) {
           for (var i = 0; i < annotation.length; i++) {
-            annotation[i].innerHTML = names[i] + "<br>" + areas[i] + "<br>" + volumen[i];
+            //muestra los nombres y las áreas.
+            annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area + "<br>" + informacion[i].volumen;
           }
-        } else if (checkvolume.checked && checkarea.unchecked) {
+        } else if (checkvolume.checked && !checkarea.checked) {
           for (var i = 0; i < annotation.length; i++) {
-            annotation[i].innerHTML = names[i] + "<br>" + volumen[i];
+            annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].volumen;
+          }
+        } else if (checkarea.checked && !checkvolume.checked){
+          for (var i = 0; i < annotation.length; i++) {
+              annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area;
           }
         } else {
-          //pass
-          alert("Que pasa?")
+          for (var i = 0; i < annotation.length; i++) {
+            annotation[i].innerHTML = informacion[i].nombre;
+          }
         }
       });
 
