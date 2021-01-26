@@ -143,7 +143,9 @@
               annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].volumen;
               }
           } else {
-            annotation[i].innerHTML = informacion[i].nombre;
+            for (var i = 0; i < annotation.length; i++) {
+              annotation[i].innerHTML = informacion[i].nombre;
+            }
           }
         });
 
@@ -166,7 +168,9 @@
               annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area;
           }
         } else {
-          annotation[i].innerHTML = informacion[i].nombre;
+          for (var i = 0; i < annotation.length; i++) {
+            annotation[i].innerHTML = informacion[i].nombre;
+          }
         }
       });
 
