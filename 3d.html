@@ -102,7 +102,7 @@
 
       //selector con el checkbox de información.
       const checkinfo = modelViewer.querySelector('#show-info');
-      
+
       //Evento para hacer aparecer y desaparecer las etiquetas.
       checkinfo.addEventListener('change', () => {
         modelViewer.querySelectorAll('button').forEach((hotspot) => {
@@ -132,12 +132,12 @@
               //muestra los nombres y las áreas.
               annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area + "<br>" + informacion[i].volumen;
             }
-          } else if (checkarea.checked && checkvolume.unchecked){
+          } else if (checkarea.checked && !checkvolume.checked){
               for (var i = 0; i < annotation.length; i++) {
                 //var texto = annotation[i].innerText;
                 annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area;
               }
-          } else if (checkarea.unchecked && checkvolume.checked){
+          } else if (!checkarea.checked && checkvolume.checked){
               for (var i = 0; i < annotation.length; i++) {
               //muestra los nombres y las áreas.
               annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].volumen;
@@ -157,11 +157,11 @@
             //muestra los nombres y las áreas.
             annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area + "<br>" + informacion[i].volumen;
           }
-        } else if (checkvolume.checked && checkarea.unchecked) {
+        } else if (checkvolume.checked && !checkarea.checked) {
           for (var i = 0; i < annotation.length; i++) {
             annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].volumen;
           }
-        } else if (checkarea.checked && checkvolume.unchecked){
+        } else if (checkarea.checked && !checkvolume.checked){
           for (var i = 0; i < annotation.length; i++) {
               annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area;
           }
