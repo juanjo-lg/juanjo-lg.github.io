@@ -80,6 +80,11 @@
         }
       ];
 
+      //Oculta los buttons al iniciar.
+      modelViewer.querySelectorAll('.Hotspot_2').forEach((hotspot) => {
+        hotspot.classList.add('hide');
+      });
+
       //Variable con el selector de ModelViewer.
       const modelViewer = document.querySelector('#model');
 
@@ -108,6 +113,7 @@
           modelViewer.setAttribute("min-field-of-view", "auto");
           modelViewer.setAttribute("max-field-of-view", "auto");
           modelViewer.setAttribute("camera-orbit", "156.6deg 89.22deg 72.06m");
+          //Oculta los buttons que no son necesarios en la muralla_2.
           modelViewer.querySelectorAll('.Hotspot_2').forEach((hotspot) => {
             hotspot.classList.add('hide');
           });
