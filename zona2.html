@@ -34,15 +34,12 @@
             <button slot="ar-button" id="ar-button">
                 View in your space
             </button>
-            <div id="ar-prompt">
-                <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-            </div>
 
             <div id="controls" class="Annotation">
                 <label for="src">Modelo:</label>
                 <select id="src" class="" name="">
-                  <option value="Zona_2">Muralla - El Salvador</option>
-                  <option value="Zona_1">Talavera - Dron</option>
+                  <option value="Zona_2.glb">Muralla - El Salvador</option>
+                  <option value="Zona_1.glb">Talavera</option>
                 </select><br>
   
                 <label for="show-info">Info</label>
@@ -95,30 +92,6 @@
 
       modelViewer.querySelector('#src').addEventListener('input', (event) => {
         modelViewer.src = event.target.value;
-        if (modelViewer.src == "Talavera.glb") {
-          //Cambio en los atributos del modelo al cambiar la fuente.
-          modelViewer.setAttribute("shadow-intensity", "0")
-          modelViewer.setAttribute("min-camera-orbit", "-45deg 90deg auto");
-          modelViewer.setAttribute("max-camera-orbit", "45deg 180deg 339.9m");
-          modelViewer.setAttribute("min-field-of-view", "auto");
-          modelViewer.setAttribute("max-field-of-view", "auto");
-          modelViewer.setAttribute("camera-orbit", "0.36deg 90deg 339.9m");
-          //En caso de que se cambie la fuente, se muestran las etiquetas.
-          modelViewer.querySelectorAll('.Hotspot_2').forEach((hotspot) => {
-            hotspot.classList.remove('hide');
-          });
-        }
-        if (modelViewer.src == "Muralla_2.glb") {
-          modelViewer.setAttribute("shadow-intensity", "2")
-          modelViewer.setAttribute("min-camera-orbit", "100deg 32deg auto");
-          modelViewer.setAttribute("max-camera-orbit", "180deg 126deg 72.06m");
-          modelViewer.setAttribute("min-field-of-view", "auto");
-          modelViewer.setAttribute("max-field-of-view", "auto");
-          modelViewer.setAttribute("camera-orbit", "156.6deg 89.22deg 72.06m");
-          modelViewer.querySelectorAll('.Hotspot_2').forEach((hotspot) => {
-            hotspot.classList.add('hide');
-          });
-        }
         if (modelViewer.src == "Zona_1.glb") {
           window.location.href = "https://juanjo-lg.github.io/zona1";
         }
