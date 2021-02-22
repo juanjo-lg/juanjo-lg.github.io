@@ -1,0 +1,266 @@
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="Modelo de muralla 3D">
+        <meta name="author" content="Juanjo Lorenzo Gutiérrez">
+        <link rel="stylesheet" href="styles/3d.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <title>Modelo 3D-3 - Muralla</title>
+    </head>
+    <body>
+        <model-viewer src="Zona_1.glb" camera-controls camera-orbit="57.59deg 82.8deg 67.79m" min-camera-orbit="1deg 0deg auto" max-camera-orbit="180deg 100deg 67.79m">
+            <button class="Hotspot" slot="hotspot-1" data-position="95.64126959490387m 380.4175995739952m -19.369024866380798m" data-normal="0.9988289162432069m -0.04396496334425691m 0.020195991546819378m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Puerta</div>
+            </button><button class="Hotspot" slot="hotspot-3" data-position="97.43096141579646m 373.58974579641006m -37.58241941418521m" data-normal="-0.008941798995713221m -0.18615351669798152m 0.982479980687492m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Muralla</div>
+            </button><button class="Hotspot" slot="hotspot-4" data-position="112.33109318381982m 378.2511517069768m -36.82280447011442m" data-normal="0.36376075536551544m -0.025154770544132624m 0.9311526998160837m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Torre</div>
+            </button><button class="Hotspot" slot="hotspot-5" data-position="118.59184769827522m 373.660600360281m -41.630612685038464m" data-normal="0.11879997314878005m 0.020187471544767053m 0.9927129657521747m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Muralla</div>
+            </button>
+            <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+            </div>
+            <button slot="ar-button" id="ar-button">
+                View in your space
+            </button>
+            <div id="ar-prompt">
+                <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+            </div>
+
+            <div id="controls" class="Annotation">
+                <label for="src">Modelo:</label>
+                <select id="src" class="" name="">
+                  <option value="Muralla_2.glb">Muralla - El Salvador</option>
+                  <option value="Talavera.glb">Talavera - Dron</option>
+                </select><br>
+  
+                <label for="show-info">Info</label>
+                <input id="show-info" type="checkbox" checked><br>
+                <label for="show-area">Área</label>
+                <input id="show-area" type="checkbox"><br>
+                <label for="show-volume">Volumen</label>
+                <input id="show-volume" type="checkbox">
+             </div>
+        </model-viewer>
+    </body>
+
+    <!-- Loads model-viewer for modern browsers -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <!-- Loads model-viewer for older browsers -->
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+    <!-- Script para cambiar de un modelo a otro según la opción escogida. -->
+    <script type="module">
+
+      var informacion = [
+        {
+          nombre: 'Muralla',
+          area: 'Area: 25 m2',
+          volumen: 'Vol: 47 m3'
+        },
+        {
+          nombre: 'Torre',
+          area: 'Area: 21 m2',
+          volumen: 'Vol: 60 m3'
+        },
+        {
+          nombre: 'Puerta',
+          area: 'Area: 27 m2',
+          volumen: 'Vol: 30 m3'
+        },
+        {
+          nombre: 'Hotel',
+          area: 'Area: 15 m2',
+          volumen: 'Vol: 80 m3'
+        }
+      ];
+
+      //Variable con el selector de ModelViewer.
+      const modelViewer = document.querySelector('#model');
+
+      //lista con los distintos <div> que muestran la información.
+      let annotation = modelViewer.getElementsByClassName('HotspotAnnotation');
+
+      modelViewer.querySelector('#src').addEventListener('input', (event) => {
+        modelViewer.src = event.target.value;
+        if (modelViewer.src == "Talavera.glb") {
+          //Cambio en los atributos del modelo al cambiar la fuente.
+          modelViewer.setAttribute("shadow-intensity", "0")
+          modelViewer.setAttribute("min-camera-orbit", "-45deg 90deg auto");
+          modelViewer.setAttribute("max-camera-orbit", "45deg 180deg 339.9m");
+          modelViewer.setAttribute("min-field-of-view", "auto");
+          modelViewer.setAttribute("max-field-of-view", "auto");
+          modelViewer.setAttribute("camera-orbit", "0.36deg 90deg 339.9m");
+          //En caso de que se cambie la fuente, se muestran las etiquetas.
+          modelViewer.querySelectorAll('.Hotspot_2').forEach((hotspot) => {
+            hotspot.classList.remove('hide');
+          });
+        }
+        if (modelViewer.src == "Muralla_2.glb") {
+          modelViewer.setAttribute("shadow-intensity", "2")
+          modelViewer.setAttribute("min-camera-orbit", "100deg 32deg auto");
+          modelViewer.setAttribute("max-camera-orbit", "180deg 126deg 72.06m");
+          modelViewer.setAttribute("min-field-of-view", "auto");
+          modelViewer.setAttribute("max-field-of-view", "auto");
+          modelViewer.setAttribute("camera-orbit", "156.6deg 89.22deg 72.06m");
+          modelViewer.querySelectorAll('.Hotspot_2').forEach((hotspot) => {
+            hotspot.classList.add('hide');
+          });
+        }
+        if (modelViewer.src == "Zona_2.glb") {
+          window.location.href = "https://juanjo-lg.github.io/zona2";
+        }
+      });
+
+      //selector con el checkbox de información.
+      const checkinfo = modelViewer.querySelector('#show-info');
+
+      //Evento para hacer aparecer y desaparecer las etiquetas.
+      checkinfo.addEventListener('change', () => {
+        modelViewer.querySelectorAll('button').forEach((hotspot) => {
+          if (checkinfo.checked) {
+            hotspot.classList.remove('hide');
+          } else {
+            hotspot.classList.add('hide');
+            //desmarca las demás casillas de información.
+            checkarea.checked = false;
+            checkvolume.checked = false;
+            for (var i = 0; i < annotation.length; i++) {
+              //muestra los nombres y las áreas.
+              annotation[i].innerHTML = informacion[i].nombre;
+            }
+          }
+        });
+      });
+
+      //selector con el checkbox de área.
+      const checkarea = modelViewer.querySelector('#show-area');
+
+      //Evento para mostrar información de área.
+      checkarea.addEventListener('change', () => {
+          if (checkarea.checked && checkvolume.checked) {
+            //bucle con los div.
+            for (var i = 0; i < annotation.length; i++) {
+              //muestra los nombres y las áreas.
+              annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area + "<br>" + informacion[i].volumen;
+            }
+          } else if (checkarea.checked && !checkvolume.checked){
+              for (var i = 0; i < annotation.length; i++) {
+                //var texto = annotation[i].innerText;
+                annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area;
+              }
+          } else if (!checkarea.checked && checkvolume.checked){
+              for (var i = 0; i < annotation.length; i++) {
+              //muestra los nombres y las áreas.
+              annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].volumen;
+              }
+          } else {
+            for (var i = 0; i < annotation.length; i++) {
+              annotation[i].innerHTML = informacion[i].nombre;
+            }
+          }
+        });
+
+      //selector con el checkbox de volúmenes.
+      const checkvolume = modelViewer.querySelector('#show-volume');
+
+      //Evento para mostrar la información de los volúmenes.
+      checkvolume.addEventListener('change', () => {
+        if (checkvolume.checked && checkarea.checked) {
+          for (var i = 0; i < annotation.length; i++) {
+            //muestra los nombres y las áreas.
+            annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area + "<br>" + informacion[i].volumen;
+          }
+        } else if (checkvolume.checked && !checkarea.checked) {
+          for (var i = 0; i < annotation.length; i++) {
+            annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].volumen;
+          }
+        } else if (checkarea.checked && !checkvolume.checked){
+          for (var i = 0; i < annotation.length; i++) {
+              annotation[i].innerHTML = informacion[i].nombre + "<br>" + informacion[i].area;
+          }
+        } else {
+          for (var i = 0; i < annotation.length; i++) {
+            annotation[i].innerHTML = informacion[i].nombre;
+          }
+        }
+      });
+
+    </script>
+
+    <style>
+    #controls {
+       position: absolute;
+       bottom: 16px;
+       left: 16px;
+       max-width: unset;
+       transform: unset;
+     }
+
+    .Hotspot {
+        background: #fff;
+        border-radius: 32px;
+        border: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        box-sizing: border-box;
+        cursor: pointer;
+        height: 24px;
+        padding: 8px;
+        position: relative;
+        transition: opacity 0.3s;
+        width: 24px;
+    }
+
+    .Hotspot:not([data-visible]) {
+        background: transparent;
+        border: 4px solid #fff;
+        box-shadow: none;
+        height: 32px;
+        pointer-events: none;
+        width: 32px;
+    }
+
+    .Hotspot:focus {
+        border: 4px solid rgb(0, 128, 200);
+        height: 32px;
+        outline: none;
+        width: 32px;
+    }
+
+    .Hotspot>* {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+
+    .HotspotAnnotation, .Annotation {
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        color: rgba(0, 0, 0, 0.8);
+        display: block;
+        font-family: Futura, Helvetica Neue, sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        left: calc(100% + 1em);
+        max-width: 128px;
+        overflow-wrap: break-word;
+        padding: 0.5em 1em;
+        position: absolute;
+        top: 50%;
+        width: max-content;
+    }
+
+    .Hotspot:not([data-visible])>* {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(calc(-50% + 4px));
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /*Esto hace que se puedan ocultar las etiquetas*/
+    .hide {
+      display: none;
+    }
+    </style>
+</html>
