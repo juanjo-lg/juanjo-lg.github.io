@@ -1,0 +1,111 @@
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="Modelo de muralla 3D">
+        <meta name="author" content="Juanjo Lorenzo Gutiérrez">
+        <link rel="stylesheet" href="styles/3d.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <title>Modelo 3D-3 - Muralla</title>
+    </head>
+    <body>
+        <model-viewer id="model" src="Cenital.glb" poster="poster.png" camera-controls exposure="0.09" shadow-intensity="0" shadow-softness="1" min-camera-orbit="0deg 90deg 425.9m" max-camera-orbit="0deg 90deg auto" min-field-of-view="37.3deg" max-field-of-view="auto">
+            <button class="Hotspot" slot="hotspot-1" data-position="152.20388833415305m -166.4798288576215m -12.283741221334026m" data-normal="0.034275115969255456m 0.00048528711095797094m 0.9994123177756586m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Zona_1</div>
+            </button>
+            <button class="Hotspot" slot="hotspot-2" data-position="-1.0077460945085122m 3.7873746290975703m -6.879129434849517m" data-normal="0.04443836412950509m 0.006927816947301179m 0.9989881066088016m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Zona_2</div>
+            </button>
+
+        </model-viewer>
+    </body>
+
+    <!-- Loads model-viewer for modern browsers -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <!-- Loads model-viewer for older browsers -->
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+    <script type="module">
+
+    //Variable con el selector de ModelViewer.
+    const modelViewer = document.querySelector('#model');
+
+    //lista con los distintos <div> que muestran la información.
+    let annotation = modelViewer.getElementsByClassName('HotspotAnnotation');
+
+    </script>
+
+    <style>
+    #controls {
+       position: absolute;
+       bottom: 16px;
+       left: 16px;
+       max-width: unset;
+       transform: unset;
+     }
+
+    .Hotspot {
+        background: #fff;
+        border-radius: 32px;
+        border: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        box-sizing: border-box;
+        cursor: pointer;
+        height: 24px;
+        padding: 8px;
+        position: relative;
+        transition: opacity 0.3s;
+        width: 24px;
+    }
+
+    .Hotspot:not([data-visible]) {
+        background: transparent;
+        border: 4px solid #fff;
+        box-shadow: none;
+        height: 32px;
+        pointer-events: none;
+        width: 32px;
+    }
+
+    .Hotspot:focus {
+        border: 4px solid rgb(0, 128, 200);
+        height: 32px;
+        outline: none;
+        width: 32px;
+    }
+
+    .Hotspot>* {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+
+    .HotspotAnnotation, .Annotation {
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        color: rgba(0, 0, 0, 0.8);
+        display: block;
+        font-family: Futura, Helvetica Neue, sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        left: calc(100% + 1em);
+        max-width: 128px;
+        overflow-wrap: break-word;
+        padding: 0.5em 1em;
+        position: absolute;
+        top: 50%;
+        width: max-content;
+    }
+
+    .Hotspot:not([data-visible])>* {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(calc(-50% + 4px));
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /*Esto hace que se puedan ocultar las etiquetas*/
+    .hide {
+      display: none;
+    }
+    </style>
+</html>
