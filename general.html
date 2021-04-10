@@ -35,9 +35,17 @@
     //lista con los distintos <button> que muestran la información.
     //const btn = modelViewer.querySelectorAll('button');
 
+    function zona1 () {
+        return window.location.href = "https://juanjo-lg.github.io/zona1";
+    }
+
+    function zona2 () {
+        return window.location.href = "https://juanjo-lg.github.io/zona2";
+    }
+
     //Evento para cambiar de scr al hacer click en cada botón.
-    modelViewer.getElementById('btn1').onclick = window.location.href = "https://juanjo-lg.github.io/zona1";
-    modelViewer.getElementById('btn2').onclick = window.location.href = "https://juanjo-lg.github.io/zona2";
+    modelViewer.getElementById('btn1').onclick = zona1;
+    modelViewer.getElementById('btn2').onclick = zona2;
 
     </script>
 
