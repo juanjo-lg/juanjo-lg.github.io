@@ -6,6 +6,11 @@
         <link rel="stylesheet" href="styles/3d.css">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
         <title>Modelo 3D-3 - Muralla</title>
+        <script>
+          function inicio(){
+            window.location.href = "https://juanjo-lg.github.io/general";
+          }
+        </script>
     </head>
     <body>
         <model-viewer id="model" src="Zona_1.glb" poster="poster.png" camera-controls camera-orbit="57.59deg 82.8deg 67.79m" min-camera-orbit="1deg 0deg auto" max-camera-orbit="180deg 100deg 67.79m">
@@ -35,7 +40,7 @@
               <input id="show-area" type="checkbox"><br>
               <label for="show-volume">Volumen</label>
               <input id="show-volume" type="checkbox"><br><br>
-              <label id="inicio">Inicio</label>
+              <label onclick="inicio()" id="inicio">Inicio</label>
              </div>
         </model-viewer>
     </body>
