@@ -6,6 +6,16 @@
         <link rel="stylesheet" href="styles/3d.css">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
         <title>Modelo 3D-3 - Muralla</title>
+        <script>
+            //Funciones para utilizar en el evento "onclick"
+            function zona1 () {
+                window.location.href = "https://juanjo-lg.github.io/zona1";
+            }
+
+            function zona2 () {
+                window.location.href = "https://juanjo-lg.github.io/zona2";
+            }
+        </script>
     </head>
     <body>
         <model-viewer id="model" src="Cenital.glb" poster="poster.png" camera-controls exposure="0.09" shadow-intensity="0" shadow-softness="1" min-camera-orbit="0deg 90deg 425.9m" max-camera-orbit="0deg 90deg auto" min-field-of-view="37.3deg" max-field-of-view="auto">
@@ -36,18 +46,11 @@
     //const btn = modelViewer.querySelectorAll('button');
 
 
-    //Funciones para utilizar en el evento "onclick"
-    function zona1 () {
-        window.location.href = "https://juanjo-lg.github.io/zona1";
-    }
-
-    function zona2 () {
-        window.location.href = "https://juanjo-lg.github.io/zona2";
-    }
+    
 
     //Evento para cambiar de scr al hacer click en cada botón.
-    modelViewer.getElementById('btn1').onclick = zona1;
-    modelViewer.getElementById('btn2').onclick = zona2;
+    //modelViewer.getElementById('btn1').onclick = zona1;
+    //modelViewer.getElementById('btn2').onclick = zona2;
 
     </script>
 
